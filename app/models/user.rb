@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  before_save { self.email = email.downcase }
+  before_save { email.downcase! }
   validates :firstname, presence: true, length: { maximum:50 }
   validates :lastname, presence: true, length: { maximum:50 }
 
@@ -12,4 +12,8 @@ class User < ActiveRecord::Base
 
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }
+
+  def fullname
+    return self.firstname + ' ' + self.lastname
+  end
 end

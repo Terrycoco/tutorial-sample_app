@@ -1,7 +1,7 @@
 u1 = User.new
 u1.firstname = "John"
 u1.lastname = "Doe"
-u1.email = "john@example.com"
+u1.email = "example@railstutorial.org"
 u1.password = "johnspwd"
 u1.password_confirmation = "johnspwd"
 u1.save
